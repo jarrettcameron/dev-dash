@@ -1,0 +1,143 @@
+body {
+    background: linear-gradient(rgba(24, 10, 33, 0.9), rgba(24, 10, 33, 0.6)), url('https://cdna.artstation.com/p/assets/images/images/052/004/730/large/yurii-ray-13.jpg?1658731868');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Tilt Warp', sans-serif;
+    user-select: none;
+    min-height: 100dvh;
+    overflow: hidden;
+}
+
+.font-shadow {
+    text-shadow: 3px 3px rgb(187, 78, 255);
+}
+
+#nerd {
+    filter: drop-shadow(5px 5px 5px rgb(227, 196, 22));
+    animation: idle 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#nerd:active {
+    animation: click 0.2s;
+}
+
+@keyframes click {
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes idle {
+    0% {
+        transform: translateX(0px) rotate(0);
+    }
+
+    15% {
+        transform: translateX(20px) rotate(10deg);
+    }
+
+    50% {
+        transform: translateX(0px) rotate(0);
+    }
+
+    85% {
+        transform: translateX(-20px) rotate(-10deg);
+    }
+
+    100% {
+        transform: translateX(0px) rotate(0deg);
+    }
+}
+
+.falling-nerd {
+    animation: falling-nerd 5s;
+    width: 20dvw;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+@keyframes falling-nerd {
+    0% {
+        transform: translateY(0px) rotate(0);
+    }
+
+    99% {
+        transform: translateY(150dvh) rotate(1000deg);
+    }
+
+    100% {
+        display: none
+    }
+}
+
+.point {
+    animation: point 5s;
+}
+
+@keyframes point {
+    0% {
+        top: 100dvh;
+    }
+
+    10% {
+        top: 25dvh;
+    }
+
+    90% {
+        top: 25dvh;
+    }
+
+    100% {
+        top: 100dvh;
+    }
+}
+
+.achievement-active {
+    animation: drop 5s;
+}
+
+@keyframes drop {
+    0% {
+        top: -20dvh;
+    }
+
+    10% {
+        top: -1dvh;
+    }
+
+    90% {
+        top: -1dvh;
+    }
+
+    100% {
+        top: -20dvh;
+    }
+}
+
+.nerds * {
+    pointer-events: none;
+    z-index: 2;
+}
+
+a {
+    color: rgb(187, 78, 255);
+    text-decoration: none;
+}
+
+.comment-bubble {
+    max-width: 30dvw;
+    position: absolute;
+    right: 0dvw;
+    bottom: -15dvh;
+}

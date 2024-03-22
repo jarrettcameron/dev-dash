@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body class="bg-black text-light">
+    <div class="container-fluid" style="z-index: 5">
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <div class="position-relative">
+                    <div id="point" class="d-none position-absolute"
+                        style="width: 30dvw; max-width: 200px; top: 25dvh; left: -7dvw;">
+                        <img class="img-fluid" src="finger.png" alt="">
+                    </div>
+                    <div id="achievement" style="top: -20dvh;"
+                        class="rounded achievement position-absolute w-100 ps-4 bg-dark pb-0 p-2 mt-3">
+                        <span class="fs-3">🍕 Title</span>
+                        <p class="text-secondary fs-5">Test</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nerds opacity-50">
+
+    </div>
+
+    <main class="container-fluid">
+        <section class="row">
+            <div class="col-12 p-3">
+                <div class="row flex-column align-items-center">
+                    <div class="col-12 mb-5">
+                        <span class="fs-1 font-shadow">🤓 Developer Dash</span>
+                        <a href="#offcanvas" data-bs-toggle="offcanvas" class="fs-1 float-end"><i
+                                class="mdi mdi-cart"></i></a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-11 p-2 mt-4 bg-dark rounded rounded-pill text-center"
+                        style="--bs-bg-opacity: .5;">
+                        <span id="stats" class="fs-2"></span>
+                    </div>
+                    <div class="col-md-7 col-lg-6 col-xl-5 col-xxl-4 col-11 text-center">
+                        <div class="position-relative w-100 float-end" style="z-index: 1;">
+                            <div
+                                class="d-none shadow border border-2 border-warning comment-bubble rounded position-absolute bg-light p-3 text-dark">
+                                erm.. what the frick brother
+                            </div>
+                        </div>
+                        <img onclick="performClick()" id="nerd" class="img-fluid w-100" src="average-developer.png"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="offcanvas p-3 bg-dark offcanvas-end" id="offcanvas" style="width: 90dvw; max-width: 500px;">
+                <div class="offcanvas-body container-fluid text-light">
+
+                    <div class="row px-4 justify-content-center">
+                        <div class="col-12 mb-2">
+                            <h1>🛍️ Shop</h1>
+                        </div>
+                        <div class="col-12 rounded bg-black my-3 mt-2">
+                            <div class="row p-1 flex-column">
+                                <div class="col pt-2">
+                                    <h3>Click Upgrades</h3>
+                                </div>
+                                <div class="col" id="mountain-dew">
+                                    <button class="btn btn-primary fs-5 text-light"></button>
+                                    <p class="px-3 pt-2 text-secondary"></p>
+                                </div>
+                                <div class="col" id="ubereats">
+                                    <button class="btn btn-primary fs-5 text-light"></button>
+                                    <p class="px-3 pt-2 text-secondary"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 rounded bg-black my-3">
+                            <div class="row p-1 flex-column">
+                                <div class="col pt-2">
+                                    <h3>Automatic Upgrades</h3>
+                                </div>
+                                <div class="col" id="fiverr-developer">
+                                    <button class="btn btn-primary fs-5 text-light"></button>
+                                    <p class="px-3 pt-2 text-secondary"></p>
+                                </div>
+                                <div class="col" id="chatgpt">
+                                    <button class="btn btn-primary fs-5 text-light"></button>
+                                    <p class="px-3 pt-2 text-secondary"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h1>Inventory</h1>
+                        </div>
+                        <div class="col-12 rounded bg-black my-2">
+                            <div class="row p-1 flex-column">
+                                <span class="fs-4" id="inventory">You don't have any items yet!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
