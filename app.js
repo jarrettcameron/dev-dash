@@ -65,11 +65,11 @@ let achievements = [
         name: '🚶‍♂️ Go Outside',
         description: 'Maybe the real exercise was the nerds we met along the way.',
         unlocked: false
-    },
+    }
 ]
 
 
-let nerdLines = ["erm.. what the flip dude", "erm.. i'm a little hungry", 'i crave the dew', 'where\'s my hug at?', '*aggressive typing*', 'i bet you don\'t even know sql!', 'apache cassandra 🔛🔝', 'live laugh code', 'i type 323 wpm noob', '*opens steam*', '*opens vscode*', 'wh- what are you doin', 'ur bad!11! no skills??!', 'im champion 🤓', 'jarrett was here', `mY nAmE iS mIcK (best teacher tho fr fr)`, 'where did hee goooo', 'erm actually thats not right ☝️', 'chair upgrade incoming', '💯 W coding', '*rizzard music*', 'hoo-ray!', 'where art thou skills']
+let nerdLines = ["erm.. what the flip dude", "erm.. i'm a little hungry", 'i crave the dew', 'where\'s my hug at?', '*aggressive typing*', 'i bet you don\'t even know sql!', 'apache cassandra 🔛🔝', 'live laugh code', 'i type 323 wpm noob', '*opens steam*', '*opens vscode*', 'wh- what are you doin', 'ur bad!11! no skills??!', 'im champion 🤓', 'jarrett was here', `mY nAmE iS mIcK (best teacher tho fr fr)`, 'where did hee goooo', 'erm actually thats not right ☝️', 'chair upgrade incoming', '💯 W coding', '*rizzard music*', 'hoo-ray!', 'where art thou skills', 'that column is improperly nested!', 'im telling jake!']
 
 function drawStats() {
     const statsElm = document.querySelector('#stats')
@@ -232,9 +232,25 @@ function loadData() {
 function checkAchievementConditions() {
     achievements.filter(x => x.unlocked == false).forEach(n => {
         switch (n.name) {
-            case 'Desolate Developer':
+            case '🍕 Desolate Developer':
                 const uberEatsUpgrade = upgrades.find(x => x.name == 'UberEats')
                 if (uberEatsUpgrade.quantity > 0) {
+                    triggerAchievement(n.name)
+                }
+                break
+            case '🍭 Sugar Rush':
+                const mtnDew = upgrades.find(x => x.name == 'Mountain Dew')
+                if (mtnDew.quantity > 9) {
+                    triggerAchievement(n.name)
+                }
+                break
+            case '⌨️ Keyboard Warrior':
+                if (player.cash >= 10000) {
+                    triggerAchievement(n.name)
+                }
+                break
+            case '🚶‍♂️ Go Outside':
+                if (player.cash >= 100000) {
                     triggerAchievement(n.name)
                 }
                 break
@@ -250,6 +266,9 @@ function triggerAchievement(achievementName) {
     achievementElm.querySelector('p').innerHTML = achievement.description
     achievementElm.classList.add('achievement-active')
 
+    setTimeout(() => {
+        achievementElm.classList.remove('achievement-active')
+    }, 5000)
 }
 
 loadData()
